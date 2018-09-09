@@ -11,9 +11,11 @@ defined('MOODLE_INTERNAL') || die;
 class observer {
     /**
      * A new user signed up. (not yet confirmed.)
+     *
+     * @param \core\event\user_created $event
      */
     public static function user_created(\core\event\user_created $event) {
-        $user = $event->get_record_snapshort('user', $event->objectid);
+        $user = $event->get_record_snapshot('user', $event->objectid);
         if ($user->auth !== 'email')
             return;
 
