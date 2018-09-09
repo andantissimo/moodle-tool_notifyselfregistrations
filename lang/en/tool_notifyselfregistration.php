@@ -7,4 +7,13 @@
 defined('MOODLE_INTERNAL') || die;
 
 $string['pluginname'] = 'Notification of self registration';
-$string['notifyadmins'] = 'Notify site admins of self registration';
+$string['notifyselfregistrations'] = 'Email self registrations to';
+$string['confignotifyselfregistrations'] = 'Send self registrations notification message to these selected users.';
+$string['notifyselfregistrationssubject'] = '{$a->sitename} :: Self registrations notification';
+$string['notifyselfregistrationsmessage'] = 'New user has been self registered.
+
+Username: {$a->username}
+Fullname: {$a->fullname}
+Email address: {$a->email}
+
+{$a->profile}';

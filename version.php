@@ -6,6 +6,7 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2018090500;
+$plugin->version   = 2018091000;
 $plugin->requires  = 2016052300; // Moodle 3.1
 $plugin->component = 'tool_notifyselfregistration';
+$plugin->maturity  = MATURITY_RC;

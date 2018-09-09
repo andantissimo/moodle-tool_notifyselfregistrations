@@ -6,8 +6,14 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
-use tool_notifyselfregistration\admin_setting\special_registerauth_with_notify;
-
 if ($hassiteconfig) {
-    $ADMIN->locate('manageauths')->add(new special_registerauth_with_notify());
+    /** @var admin_root $ADMIN */
+    /** @var admin_settingpage $notifications */
+    $notifications = $ADMIN->locate('notifications');
+    $notifications->add(
+        new admin_setting_users_with_capability('notifyselfregistration',
+            new lang_string('notifyselfregistrations', 'tool_notifyselfregistration'),
+            new lang_string('confignotifyselfregistrations', 'tool_notifyselfregistration'),
+            array(), 'moodle/site:config')
+        );
 }
