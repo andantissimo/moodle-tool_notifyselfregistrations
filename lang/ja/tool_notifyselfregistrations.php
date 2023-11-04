@@ -1,6 +1,6 @@
 <?php
 /**
- * @package   tool_notifyselfregistration
+ * @package   tool_notifyselfregistrations
  * @copyright 2018 MALU {@link https://github.com/andantissimo}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

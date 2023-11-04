@@ -6,7 +6,7 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
-$string['pluginname'] = 'Notification of self registration';
+$string['pluginname'] = 'Notification of self registrations';
 $string['notifyselfregistrations'] = 'Email self registrations to';
 $string['confignotifyselfregistrations'] = 'Send self registrations notification message to these selected users.';
 $string['notifyselfregistrationssubject'] = '{$a->sitename} :: Self registrations notification';

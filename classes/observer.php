@@ -1,10 +1,10 @@
 <?php
 /**
- * @package   tool_notifyselfregistration
+ * @package   tool_notifyselfregistrations
  * @copyright 2018 MALU {@link https://github.com/andantissimo}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-namespace tool_notifyselfregistration;
+namespace tool_notifyselfregistrations;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -22,10 +22,10 @@ class observer {
         if ($user->auth !== 'email')
             return;
 
-        if (empty($CFG->notifyselfregistration))
+        if (empty($CFG->notifyselfregistrations))
             return;
 
-        $recipients = get_users_from_config($CFG->notifyselfregistration, 'moodle/site:config');
+        $recipients = get_users_from_config($CFG->notifyselfregistrations, 'moodle/site:config');
 
         $site = get_site();
         $noreplyuser = \core_user::get_noreply_user();
@@ -37,8 +37,8 @@ class observer {
         $a->fullname = fullname($user);
         $a->email = $user->email;
         $a->profile = new \moodle_url('/user/profile.php', [ 'id' => $user->id ]);
-        $subject = new \lang_string('notifyselfregistrationssubject', 'tool_notifyselfregistration', $a);
-        $message = new \lang_string('notifyselfregistrationsmessage', 'tool_notifyselfregistration', $a);
+        $subject = new \lang_string('notifyselfregistrationssubject', 'tool_notifyselfregistrations', $a);
+        $message = new \lang_string('notifyselfregistrationsmessage', 'tool_notifyselfregistrations', $a);
 
         foreach ($recipients as $recipient) {
             if ($noreplyuser->id == \core_user::NOREPLY_USER)
